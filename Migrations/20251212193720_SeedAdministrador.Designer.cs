@@ -11,7 +11,7 @@ using MinimalApi.Infraestrutura.Db;
 namespace minimal_api.Migrations
 {
     [DbContext(typeof(DbContexto))]
-    [Migration("20251212144231_SeedAdministrador")]
+    [Migration("20251212193720_SeedAdministrador")]
     partial class SeedAdministrador
     {
         /// <inheritdoc />
@@ -55,8 +55,8 @@ namespace minimal_api.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "admin@test.com",
-                            Perfil = "Administrador",
+                            Email = "administrador@test.com",
+                            Perfil = "Adm",
                             Senha = "123456"
                         });
                 });

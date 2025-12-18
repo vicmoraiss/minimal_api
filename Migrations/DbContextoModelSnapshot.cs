@@ -52,8 +52,8 @@ namespace minimal_api.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "admin@test.com",
-                            Perfil = "Administrador",
+                            Email = "administrador@test.com",
+                            Perfil = "Adm",
                             Senha = "123456"
                         });
                 });
