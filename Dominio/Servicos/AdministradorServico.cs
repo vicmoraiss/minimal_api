@@ -21,4 +21,42 @@ public class AdministradorServico : IAdministradorServico
         var adm = _contexto.Administradores.Where(a => a.Email == loginDTO.Email && a.Senha == loginDTO.Senha).FirstOrDefault();
         return adm;
     }
+
+    public List<Administrador> Todos(int? pagina)
+    {
+        int tamanhoPagina = 10;
+        int numeroPagina = pagina ?? 1;
+
+        return _contexto.Administradores
+            .Skip((numeroPagina - 1) * tamanhoPagina)
+            .Take(tamanhoPagina)
+            .ToList();
+   }
+
+    public Administrador Incluir(Administrador administrador)
+    {
+        _ = _contexto.Administradores.Add(administrador);
+        _contexto.SaveChanges();
+        return _contexto.Administradores.Last();
+    }
+
+    public Administrador? ObterPorId(int id)
+    {
+        return _contexto.Administradores.Where(a => a.Id == id).FirstOrDefault();
+    }
+
+    public Administrador BuscarPorId(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal Administrador Login()
+    {
+        throw new NotImplementedException();
+    }
+
+    Administrador IAdministradorServico.Login()
+    {
+        return Login();
+    }
 }
